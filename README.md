@@ -3,7 +3,7 @@ Ninja fbox aha driver
 This driver makes Fritz!Dect 200 and Fritz!Powerline 546E devices accassible from within the Ninjablock dashboard.
 
 ## Restrictions
-Please be aware that this is not an official driver from the manufacturer. I created this from my personal use and want to share it:
+Please be aware that this is not an official driver form the manufacturer. I created this for my personal use and want to share it:
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
