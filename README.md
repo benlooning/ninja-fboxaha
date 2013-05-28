@@ -17,7 +17,7 @@ tbd
 
 
 ## Dashboard
-![ScreenShot](https://raw.github.com/benzarts/fboxaha/master/dashboard.png)
+![ScreenShot](https://raw.github.com/benzarts/ninja-fboxaha/master/dashboard.png)
 
 ## Credits
 I'm using the following node modules to make my life easier:
