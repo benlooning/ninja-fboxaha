@@ -1,0 +1,20 @@
+{
+  "name": "ninja-fboxaha",
+  "version": "0.0.1",
+  "description": "Ninja driver to access Fritz!Dect 200 and Fritz!Powerline 546E devices via the Ninjablock dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benzarts/ninja-fboxaha"
+  },
+  "dependencies": {
+    "wifi_location": "xml2js",
+	"wifi_location": "iconv"
+  },
+  "author": "Ben Looning",
+  "license": "MIT",
+  "config": {}
+}
