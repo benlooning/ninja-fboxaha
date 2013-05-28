@@ -12,6 +12,13 @@ Use the ”Drivers” button on your dashboard to add your Fritzbox(es) or 546E devi
 
 The password will not be encrypted (till now). So, I strongly recommend to create a dedicated account in the systems settings of your box, that is restricted to the use of the “Smart Home” functionality and to deactivate the permission to access the box from the internet with this account.
 
+The driver creates two devices on your ninjablock for every aha device that was detected during the driver initialization. Devices of the device type power allow you to monitor the energy consumption and devices of the device type state allow you to see the current outlet state or to change the state (updates occur every 30 seconds). Unfortunately you have to add the required custom states manually via the dashboard. Click on the settings icon of the state device and select “Add New State”, type “on” into the text field and click on “Save State”. Repeat the procedure for state “off”. 
+ 
+You can use the reconnect option in the driver’s settings to force a new search for the selected box (experimental). Removing a box via the driver’s settings will remove it from the driver’s configuration and should also stop the corresponding devices to request updates from your Fritzbox(es) or 546E. You have to manually remove the devices from your dashboard or you can keep them in case you want to reconnect the box later (the device ID will be the same again). Changes (host, username, password) to an already configured box require a restart of the ninjablock service e.g. via command line. Log into the Ninjablock via SSH
+```
+  $ sudo service ninjablock restart
+```
+
 ## Installation
 tbd
 
