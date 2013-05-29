@@ -11,8 +11,8 @@
     "url": "https://github.com/benzarts/ninja-fboxaha"
   },
   "dependencies": {
-    "wifi_location": "xml2js",
-	"wifi_location": "iconv"
+    "xml2js": "latest",
+	"iconv": "latest"
   },
   "author": "Ben Looning",
   "license": "MIT",
