@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "xml2js": "latest",
-	"iconv": "latest"
+    "iconv": "latest"
   },
   "author": "Ben Looning",
   "license": "MIT",
