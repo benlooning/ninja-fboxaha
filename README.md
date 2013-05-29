@@ -27,7 +27,9 @@ Log into the Ninjablock via SSH
   $ cd /opt/ninja/drivers/
   $ rm -rf ninja-fboxaha
   $ git clone https://github.com/benzarts/ninja-fboxaha.git ninja-fboxaha
-  $ sudo service ninjablock restart
+  $ cd ninja-fboxaha/
+  $ npm install
+  $ service ninjablock restart
 ```
 
 ## Credits
