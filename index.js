@@ -38,12 +38,16 @@ function fboxaha(opts,app) {
     }  
 
 	self._opts.boxes.forEach ( function (box) {
-	  self.createBox(box, function(newBox){});
+	  self.createBox(box, function(newBox){
+	    self.connectToBox (newBox);
+	  });
 	});
-	
+
+	/*
     self.boxesObj.forEach ( function (box) {
 	  self.connectToBox (box);
     });
+	*/
  
   });
 };
