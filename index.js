@@ -42,12 +42,6 @@ function fboxaha(opts,app) {
 	    self.connectToBox (newBox);
 	  });
 	});
-
-	/*
-    self.boxesObj.forEach ( function (box) {
-	  self.connectToBox (box);
-    });
-	*/
  
   });
 };
