@@ -1,5 +1,9 @@
-var Power = require('./lib/power')
+var PowerNET = require('./lib/powerNET')
+  , OutletNET = require('./lib/outletNET')
+  , Power = require('./lib/power')
   , Outlet = require('./lib/outlet')
+  , Energy = require('./lib/energy')
+  , Socket = require('./lib/socket')
   , util = require('util')
   , configHandlers = require('./lib/config')
   , stream = require('stream')
@@ -31,18 +35,19 @@ function fboxaha(opts,app) {
   app.on('client::up',function(){
 
     self.appName = 'fbox aha Ninja Module 0.1';
+	self.boxesObj = [];
 
     if (typeof self._opts.boxes === "undefined") {
 	  self._opts.boxes = []; //{host: '', user: '', password: ''}
 	  self.save();
-    }  
-
+    }
+	
 	self._opts.boxes.forEach ( function (box) {
 	  self.createBox(box, function(newBox){
 	    self.connectToBox (newBox);
 	  });
 	});
- 
+
   });
 };
 
@@ -82,19 +87,19 @@ fboxaha.prototype.connectToBox = function (box) {
   var self = this;
   box.validateBox ( function (error, boxInfo) {
 	if (error == null) {
-	  self.log.info('try to connect to', box._box.host);
+	  self.log.info('try to connect to', box._box.host, box.boxInfo.type);
 	  if (box.SID == null) {
 		box.createSession (null, function (error, info) {
 		  if (error == null) {
-			self.log.info (box._box.host, box.SID);
+			//self.log.info (box._box.host, box.SID);
 			self.createDevices (box);
-			self.log.debug('connect to', box._box.host, 'was successful');
+			self.log.info('connect to', box._box.host, 'was successful:', box.SID);
 		  } else {
 			self.log.info(box._box.host, error);
 		  }
 		});
 	  } else {
-		self.log.debug('connection to', box._box.host, 'already exists');
+		self.log.info('connection to', box._box.host, 'already exists:', box.SID);
 		self.createDevices (box);
 	  }	  
 	}
@@ -110,9 +115,40 @@ fboxaha.prototype.createDevices = function (box) {
 		if (device.multiMeterTimer == null)
 		  self.emit('register', new Power(box, index, self._app.log, self._app.id));
 		else
-		  self.log.debug('skipp power device', box._box.host, box.ahaDevices[index].ID);
+		  self.log.info('skipp power device', box._box.host, box.ahaDevices[index].ID);
+		if (device.multiMeterEnergyTimer == null)
+		  self.emit('register', new Energy(box, index, self._app.log, self._app.id));
+		else
+		  self.log.info('skipp energy device', box._box.host, box.ahaDevices[index].ID);
+		/*
 		if (device.outletTimer == null)
 		  self.emit('register', new Outlet(box, index, self._app.log, self._app.id));
+		else
+		  self.log.info('skipp outlet device', box._box.host, box.ahaDevices[index].ID);
+		*/
+		if (device.socketTimer == null)
+		  self.emit('register', new Socket(box, index, self._app.log, self._app.id));
+		else
+		  self.log.info('skipp socket device', box._box.host, box.ahaDevices[index].ID);
+	  });
+	} else {
+	  self.log.info(box._box.host, error);
+	}
+  });
+}
+
+fboxaha.prototype.createDevicesNET = function (box) {
+  var self = this;
+  box.getAHADevicesNET ( function (error, devices) {
+	if (error == null && box.ahaDevices != null) {
+	  box.ahaDevices.forEach ( function (device, index) {
+		self.log.debug(box._box.host, box.ahaDevices[index].ID);
+		if (device.multiMeterTimer == null)
+		  self.emit('register', new PowerNET(box, index, self._app.log, self._app.id));
+		else
+		  self.log.debug('skipp power device', box._box.host, box.ahaDevices[index].ID);
+		if (device.outletTimer == null)
+		  self.emit('register', new OutletNET(box, index, self._app.log, self._app.id));
 		else
 		  self.log.debug('skipp outlet device', box._box.host, box.ahaDevices[index].ID);
 	  });

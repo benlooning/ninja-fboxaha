@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "xml2js": "latest",
-    "iconv": "latest"
+    "iconv": "latest",
+    "cheerio": "latest"
   },
   "author": "Ben Looning",
   "license": "MIT",
