@@ -31,6 +31,7 @@ function fboxaha(opts,app) {
   app.on('client::up',function(){
 
     self.appName = 'fbox aha Ninja Module 0.1';
+    self.boxesObj = [];
 
     if (typeof self._opts.boxes === "undefined") {
 	  self._opts.boxes = []; //{host: '', user: '', password: ''}
