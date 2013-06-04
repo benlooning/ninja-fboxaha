@@ -1,11 +1,7 @@
 ninja-fboxaha
 ===
 This Ninjablock driver makes Fritz!Dect 200 and Fritz!Powerline 546E devices accassible from within the Ninjablock dashboard.
-
-## Restrictions
-Please be aware that this is not an official driver form the manufacturer. I created this for my personal use and want to share it:
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Please be aware that this is not an official driver form the manufacturer. I created this for my personal use and want to share it.
 
 ## Usage
 Use the "Drivers" button on your dashboard to add your Fritzbox(es) or 546E devices. The driver searches for every aha device connected to your box. Note that you need at least OS 05.50 as firmware (tested only with Fritzbox 7390). Please add only one box if you activated to share "Smart Home" functionality across your Fritzbox home network, because currently the driver is not able to detect duplicated aha devices.
@@ -37,3 +33,12 @@ I'm using the following node modules to make my life easier:
 [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js),
 [iconv-lite](https://github.com/ashtuchkin/iconv-lite),
 [cheerio](https://github.com/MatthewMueller/cheerio)
+
+## License (MIT)
+Copyright (c) 2013 Ben Looning
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
