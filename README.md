@@ -31,6 +31,7 @@ Log into the Ninjablock via SSH
 ## Credits
 I'm using the following node modules to make my life easier:
 [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js),
+[cheerio](https://github.com/MatthewMueller/cheerio),
 [iconv-lite](https://github.com/ashtuchkin/iconv-lite)
 
 ## License (MIT)

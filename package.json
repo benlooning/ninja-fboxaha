@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "xml2js": "latest",
+	"cheerio": "latest",
     "iconv-lite": "latest"
   },
   "author": "Ben Looning",
